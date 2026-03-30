@@ -94,6 +94,14 @@ To update:
 gemini extensions update superpowers
 ```
 
+### GitHub Copilot CLI
+
+```bash
+copilot plugin install obra/superpowers
+```
+
+**Detailed docs:** [docs/README.copilot.md](docs/README.copilot.md)
+
 ### Verify Installation
 
 Start a new session in your chosen platform and ask for something that should trigger a skill (for example, "help me plan this feature" or "let's debug this issue"). The agent should automatically invoke the relevant superpowers skill.

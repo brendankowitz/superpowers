@@ -1,5 +1,19 @@
 # Superpowers Release Notes
 
+## v5.1.0 (Unreleased)
+
+### GitHub Copilot CLI Support
+
+Superpowers now supports GitHub Copilot CLI via the official plugin system.
+
+- **Plugin install**: `copilot plugin install obra/superpowers` — global install, skills available in every session
+- **Session bootstrap**: `hooks.json` wires `hooks/session-start` to inject `using-superpowers` context at session start
+- **Full subagent support**: Copilot CLI's `task` tool maps 1:1 to Claude Code's `Task` tool; `subagent-driven-development` and `dispatching-parallel-agents` work natively
+- **Tool mapping**: `skills/using-superpowers/references/copilot-tools.md` documents all Copilot CLI tool equivalents
+- **Copilot-specific workflow**: `copilot-workflow` skill adds model selection guidance, cross-session memory, and plan mode integration
+
+Install: `copilot plugin install obra/superpowers`. See [docs/README.copilot.md](docs/README.copilot.md).
+
 ## v5.0.6 (2026-03-24)
 
 ### Inline Self-Review Replaces Subagent Review Loops
