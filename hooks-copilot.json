@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "$HOME/.copilot-superpowers/hooks/session-start",
+        "env": {
+          "COPILOT_CLI": "1"
+        },
+        "timeoutSec": 30
+      }
+    ]
+  }
+}
