@@ -51,28 +51,57 @@ else
     exit 1
 fi
 
-# Test 5: hooks-copilot.json exists and has correct structure
-echo "Test 5: Checking hooks-copilot.json exists..."
-if [ -f "$REPO_ROOT/hooks-copilot.json" ]; then
-    echo "  [PASS] hooks-copilot.json exists"
+# Test 5: plugin.json exists at repo root
+echo "Test 5: Checking plugin.json exists at repo root..."
+if [ -f "$REPO_ROOT/plugin.json" ]; then
+    echo "  [PASS] plugin.json exists"
 else
-    echo "  [FAIL] hooks-copilot.json not found"
+    echo "  [FAIL] plugin.json not found at $REPO_ROOT/plugin.json"
     exit 1
 fi
 
-echo "Test 5b: Checking hooks-copilot.json has sessionStart hook..."
-if grep -q '"sessionStart"' "$REPO_ROOT/hooks-copilot.json"; then
-    echo "  [PASS] hooks-copilot.json has sessionStart hook"
+# Test 5b: plugin.json has name: superpowers
+echo "Test 5b: Checking plugin.json has name: superpowers..."
+if grep -q '"name".*"superpowers"' "$REPO_ROOT/plugin.json"; then
+    echo "  [PASS] plugin.json has name: superpowers"
 else
-    echo "  [FAIL] hooks-copilot.json is missing sessionStart hook"
+    echo "  [FAIL] plugin.json missing name: superpowers"
     exit 1
 fi
 
-echo "Test 5c: Checking hooks-copilot.json sets COPILOT_CLI env var..."
-if grep -q '"COPILOT_CLI"' "$REPO_ROOT/hooks-copilot.json"; then
-    echo "  [PASS] hooks-copilot.json sets COPILOT_CLI env var"
+# Test 5c: plugin.json references hooks.json
+echo "Test 5c: Checking plugin.json references hooks.json..."
+if grep -q '"hooks".*"hooks\.json"' "$REPO_ROOT/plugin.json"; then
+    echo "  [PASS] plugin.json references hooks.json"
 else
-    echo "  [FAIL] hooks-copilot.json does not set COPILOT_CLI env var"
+    echo "  [FAIL] plugin.json does not reference hooks.json"
+    exit 1
+fi
+
+# Test 6: hooks.json exists at repo root
+echo "Test 6: Checking hooks.json exists at repo root..."
+if [ -f "$REPO_ROOT/hooks.json" ]; then
+    echo "  [PASS] hooks.json exists"
+else
+    echo "  [FAIL] hooks.json not found at $REPO_ROOT/hooks.json"
+    exit 1
+fi
+
+# Test 6b: hooks.json has sessionStart hook
+echo "Test 6b: Checking hooks.json has sessionStart hook..."
+if grep -q '"sessionStart"' "$REPO_ROOT/hooks.json"; then
+    echo "  [PASS] hooks.json has sessionStart hook"
+else
+    echo "  [FAIL] hooks.json is missing sessionStart hook"
+    exit 1
+fi
+
+# Test 6c: hooks.json sets COPILOT_CLI env var
+echo "Test 6c: Checking hooks.json sets COPILOT_CLI env var..."
+if grep -q '"COPILOT_CLI"' "$REPO_ROOT/hooks.json"; then
+    echo "  [PASS] hooks.json sets COPILOT_CLI env var"
+else
+    echo "  [FAIL] hooks.json does not set COPILOT_CLI env var"
     exit 1
 fi
 
