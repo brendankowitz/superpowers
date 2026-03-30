@@ -4,15 +4,15 @@
 
 ### GitHub Copilot CLI Support
 
-Superpowers now supports GitHub Copilot CLI via native skill discovery and optional hook-based session bootstrap.
+Superpowers now supports GitHub Copilot CLI via the official plugin system.
 
-- **Native skills**: Clone + symlink to `~/.agents/skills/superpowers` — Copilot CLI discovers skills globally from this directory, matching Codex parity exactly
-- **Session bootstrap** (optional, per-repo): `.github/hooks/superpowers.json` wires the existing `hooks/session-start` script to inject `using-superpowers` context at session start
+- **Plugin install**: `copilot plugin install obra/superpowers` — global install, skills available in every session
+- **Session bootstrap**: `hooks.json` wires `hooks/session-start` to inject `using-superpowers` context at session start
 - **Full subagent support**: Copilot CLI's `task` tool maps 1:1 to Claude Code's `Task` tool; `subagent-driven-development` and `dispatching-parallel-agents` work natively
 - **Tool mapping**: `skills/using-superpowers/references/copilot-tools.md` documents all Copilot CLI tool equivalents
-- **Known limitation**: Copilot CLI hooks are per-repository only (no confirmed global hooks config). The skill symlink install is global; hook bootstrap requires per-repo opt-in
+- **Copilot-specific workflow**: `copilot-workflow` skill adds model selection guidance, cross-session memory, and plan mode integration
 
-Install: tell Copilot CLI to fetch `.copilot/INSTALL.md`, or see [docs/README.copilot.md](docs/README.copilot.md).
+Install: `copilot plugin install obra/superpowers`. See [docs/README.copilot.md](docs/README.copilot.md).
 
 ## v5.0.6 (2026-03-24)
 
