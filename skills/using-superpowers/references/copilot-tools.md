@@ -82,3 +82,8 @@ In hook configs, use Windows-style escaped paths:
 ```json
 "bash": "%USERPROFILE%\\.copilot-superpowers\\hooks\\session-start"
 ```
+
+## Workflow Enhancements
+
+For model selection guidance, cross-session memory (workflow state and project preferences),
+and plan mode integration, see the `copilot-workflow` skill.

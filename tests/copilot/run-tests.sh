@@ -37,9 +37,10 @@ while [[ $# -gt 0 ]]; do
             echo "  --help, -h         Show this help"
             echo ""
             echo "Tests:"
-            echo "  test-hook-bootstrap.sh   Verify hook config and session-start script"
-            echo "  test-tool-mapping.sh     Verify copilot-tools.md structure and content"
-            echo "  test-install-paths.sh    Verify install docs completeness"
+            echo "  test-hook-bootstrap.sh           Verify hook config and session-start script"
+            echo "  test-tool-mapping.sh             Verify copilot-tools.md structure and content"
+            echo "  test-install-paths.sh            Verify install docs completeness"
+            echo "  test-copilot-workflow-skill.sh   Verify copilot-workflow skill structure and content"
             exit 0
             ;;
         *)
@@ -55,6 +56,7 @@ tests=(
     "test-hook-bootstrap.sh"
     "test-tool-mapping.sh"
     "test-install-paths.sh"
+    "test-copilot-workflow-skill.sh"
 )
 
 # Filter to specific test if requested
