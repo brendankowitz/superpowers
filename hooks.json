@@ -4,7 +4,7 @@
     "sessionStart": [
       {
         "type": "command",
-        "bash": "$HOME/.copilot-superpowers/hooks/session-start",
+        "bash": "./hooks/session-start",
         "env": {
           "COPILOT_CLI": "1"
         },
