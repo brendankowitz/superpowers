@@ -59,6 +59,4 @@ Copilot CLI supports persistent async shell sessions, which have no direct Claud
 
 | Command | Purpose |
 |---------|---------|
-| `/delegate` | Delegate work to the cloud Copilot agent |
 | `/fleet` | Run the same task across multiple agents in parallel |
-| `/resume` | Switch between local and cloud agent sessions |
