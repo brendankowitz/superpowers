@@ -42,12 +42,12 @@ else
     exit 1
 fi
 
-# Test 4: COPILOT_CLI branch emits hookSpecificOutput
-echo "Test 4: Checking COPILOT_CLI branch emits hookSpecificOutput..."
-if grep -A3 'COPILOT_CLI' "$REPO_ROOT/hooks/session-start" | grep -q 'hookSpecificOutput'; then
-    echo "  [PASS] COPILOT_CLI branch emits hookSpecificOutput"
+# Test 4: Copilot CLI path emits SDK-standard additionalContext (not hookSpecificOutput)
+echo "Test 4: Checking session-start emits additionalContext for Copilot CLI..."
+if grep -q 'additionalContext' "$REPO_ROOT/hooks/session-start"; then
+    echo "  [PASS] session-start emits additionalContext"
 else
-    echo "  [FAIL] COPILOT_CLI branch does not emit hookSpecificOutput"
+    echo "  [FAIL] session-start does not emit additionalContext"
     exit 1
 fi
 
