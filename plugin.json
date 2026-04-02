@@ -1,0 +1,14 @@
+{
+  "name": "superpowers",
+  "description": "Workflow skills and hooks for AI coding agents — structured brainstorming, TDD plans, subagent-driven execution, and cross-platform tool mapping",
+  "version": "5.0.7",
+  "author": {
+    "name": "Jesse Vincent",
+    "url": "https://github.com/obra/superpowers"
+  },
+  "repository": "https://github.com/obra/superpowers",
+  "license": "MIT",
+  "keywords": ["superpowers", "skills", "workflow", "tdd", "agents"],
+  "skills": "skills/",
+  "hooks": "hooks.json"
+}

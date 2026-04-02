@@ -7,7 +7,7 @@ Skills use Claude Code tool names. When you encounter these in a skill, use your
 | `Read` (file reading) | `view` |
 | `Write` (file creation) | `create` |
 | `Edit` (file editing) | `edit` |
-| `Bash` (run commands) | `bash` |
+| `Bash` (run commands) | `bash` or `powershell` |
 | `Grep` (search file content) | `grep` |
 | `Glob` (search files by name) | `glob` |
 | `Skill` tool (invoke a skill) | `skill` |
@@ -48,5 +48,15 @@ Copilot CLI supports persistent async shell sessions, which have no direct Claud
 | `store_memory` | Persist facts about the codebase for future sessions |
 | `report_intent` | Update the UI status line with current intent |
 | `sql` | Query the session's SQLite database (todos, metadata) |
+| `ask_user` | Request structured input or clarification from the user |
+| `apply_patch` | Apply unified diffs to files |
+| `show_file` | Display files prominently in the session UI |
+| `exit_plan_mode` | Exit plan mode and begin executing |
 | `fetch_copilot_cli_documentation` | Look up Copilot CLI documentation |
 | GitHub MCP tools (`github-mcp-server-*`) | Native GitHub API access (issues, PRs, code search) |
+
+## Copilot CLI slash commands
+
+| Command | Purpose |
+|---------|---------|
+| `/fleet` | Run the same task across multiple agents in parallel |
